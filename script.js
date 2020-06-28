@@ -2,11 +2,11 @@
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
+
 }
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-  // rootElem.textContent = `Got ${episodeList.length} episode(s)`;
   const mainEle = document.createElement('div');
   mainEle.id = 'main'
   rootElem.appendChild(mainEle)
@@ -19,10 +19,7 @@ function makePageForEpisodes(episodeList) {
    let titleEle = document.createElement('h1')
    titleEle.id = 'title'
    divEle.appendChild(titleEle)
-   titleEle.innerText = 
-   `${episodeList[i].name}-S${
-     episodeList[i].season.toString().padStart(2, '0')}E${
-     episodeList[i].number.toString().padStart(2, '0')}`
+   titleEle.innerText = nameOfEpisodes(episodeList[i])
    let EpisodeImage = document.createElement('img')
       EpisodeImage.src = episodeList[i].image.medium;
    divEle.appendChild(EpisodeImage);
@@ -33,16 +30,31 @@ function makePageForEpisodes(episodeList) {
 
 
   }
- // live seach 
 
-  let list = document.querySelectorAll('#episode')
-  let  arrayOfEpisodes = Array.from(list)
-  //displaying numbers of Episodes
-  const displaying = document.getElementById('displaying')
-  displaying.innerText = `Displaying ${episodeList.length}/${episodeList.length}`
-//function of live search
+
+  ////// create the name of the episodes
+  function nameOfEpisodes(film){
+    return`${film.name}-S${
+      film.season.toString().padStart(2, '0')}E${
+      film.number.toString().padStart(2, '0')}`
+  }
+  //////////////// displaying numbers of Episodes
+  function displayingNumOfEpisodes(num){
+    const displaying = document.getElementById('displaying')
+    displaying.innerText = `Displaying ${num.length}/${episodeList.length}`
+}
+displayingNumOfEpisodes(episodeList)
+  //////////filter movies
+  function filterMovies(){
+    return  show = arrayOfEpisodes.filter(f=> f.style.display === 'block')
+    }
+
+ ///////////// live seach 
+ let list = document.querySelectorAll('#episode')
+ let arrayOfEpisodes = Array.from(list)
+    
+     ///////////////////function of live search
   const searchBar = document.forms['search'].querySelector('input');
-  
   searchBar.addEventListener('keyup', function(e){
    const term = e.target.value.toLowerCase()
    arrayOfEpisodes.forEach(film=> {
@@ -53,25 +65,21 @@ function makePageForEpisodes(episodeList) {
         film.style.display = 'none'
       }
     })
-      //filter movies
-    let show = arrayOfEpisodes.filter(f=> f.style.display === 'block')
-    displaying.innerText = `Displaying ${show.length}/${episodeList.length}`
+    displayingNumOfEpisodes(filterMovies())
  })
-     // Selection bar
+
+     ///////// Selection bar
      let selectionBar = document.getElementById('selection')
      let option = document.createElement('option')
      option.innerHTML = 'Select all movies'
      selectionBar.appendChild(option)
-     //drop down list 
+     ///////////////drop down list 
      episodeList.forEach(movie=> {
     const movieOption = document.createElement('option')
-    movieOption.innerText = 
-    `${movie.name}-S${
-      movie.season.toString().padStart(2, '0')}E${
-      movie.number.toString().padStart(2, '0')}`
+    movieOption.innerText = nameOfEpisodes(movie)
     selectionBar.appendChild(movieOption)
      })
-///function for select bar
+     //////////function for select bar
      selectionBar.addEventListener('change', function(e){
      let select = e.target.value
      arrayOfEpisodes.forEach(movie=> {
@@ -79,11 +87,10 @@ function makePageForEpisodes(episodeList) {
      if(select === selectHeading || select === 'Select all movies') {movie.style.display = 'block'}
      else {movie.style.display = 'none'}
      });
-     let show = arrayOfEpisodes.filter(f=> f.style.display === 'block')
-     displaying.innerText = `Displaying ${show.length}/${episodeList.length}`
-     })
      
-}
+    displayingNumOfEpisodes(filterMovies())
+     })
+    }
 
 
 window.onload = setup;
