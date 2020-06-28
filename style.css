@@ -1,3 +1,110 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body {
+  background-color: rgb(41, 61, 61);
+}
 #root {
   color: red;
 }
+
+/* Heading Bar */
+#selection {
+margin: 20px;
+padding: 8px;
+width: 17em;
+border-radius: 10px;
+color: gray;
+
+}
+option{
+  color: rgb(21, 12, 29);
+  text-align: center;
+}
+#displaying {
+  padding: 10px;
+  border-radius: 5px;
+  color: aliceblue;
+  margin-left:10px ;
+  background-color: rgb(0, 14, 13, 0.5);
+}
+
+#head-bar {
+background-color: rgb(0, 65, 54);
+
+
+}
+
+#filterTxt {
+  height: 15px;
+  width: 15em;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px 0px 10px 20px;
+  border: 1px solid white;
+}
+
+.startSearch {
+flex-wrap: wrap;
+display: flex;
+color: white;
+padding: 10px;
+border-radius: 9px;
+border: 1px solid gray;
+align-items: center;
+}
+
+/* Eposides styles */
+
+#main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgb(182, 182, 182);
+}
+
+img {
+  border: 5px solid rgb(117, 170, 152);
+  width: 21em;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(23, 49, 47);
+}
+#episode {
+  max-width: 350px;
+  align-content: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgb(29, 105, 99);
+  border: 2px solid rgb(184, 184, 184);
+  box-shadow: 0 10px 10px rgb(28, 47, 48);
+  padding: 10px;
+  margin: 30px;
+}
+
+#title{
+  font-size: 25px;
+  color: rgb(28, 204, 166);
+  background-color: rgb(0, 37, 54);
+  margin-top: 5px ;
+  margin-bottom: 5px ;
+  text-align: center;
+  padding: 10px 15px 10px 15px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+border: 1px solid rgb(202, 202, 202);
+border-radius: 20px;
+}
+
+#para {
+  min-width: 200px;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 15px 10px 10px 18px;
+  color: rgb(203, 216, 216);
+  font-family: cursive;
+}
+
+
+
