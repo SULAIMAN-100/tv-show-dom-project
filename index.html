@@ -12,25 +12,25 @@
     <div id="root">
       <div id="head-bar">
        
-        <form  id="search">
+        <form  id="search-bar">
           <img id='logo' src="https://static.tvmaze.com/images/api/tvm_api.png" alt="">
-          <select name="select" id="selection"></select>
-          <input type="text" id="filterTxt" placeholder="search for movies"/>
-          <h id = 'displaying'></h>
+          <button id= 'homeBtn'>BACK TO SHOW LIST</button>
+          <select class="select" id="selection" ></select>
+          <input type="text" id="filterTxt" placeholder="search here"/>
+          <h4 id = 'displaying'></h4>
         </form>
       </div>
     </div>
 <footer>
   <div id="footer">
     
-    <h>Content Source from<a style = 'color:white;' href="https://www.tvmaze.com/"> TVMaze.com</a></h>
+    <h4>Content Source from<a style = 'color:white;' href="https://www.tvmaze.com/"> TVMaze.com</a></h4>
    
   </div>
 </footer>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
-
-    <!-- Loads YOUR javascript code -->
+    <script src="shows.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
