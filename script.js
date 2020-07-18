@@ -43,6 +43,7 @@ function listOfShowsProfiles(orderedShows){
   title.id = 'show-title'
   title.innerText = show.name
   let showImage = document.createElement('img')
+  showImage.id = "show-picture"
   if(show.image){
     showImage.src = show.image.medium
   } else {
@@ -57,15 +58,15 @@ function listOfShowsProfiles(orderedShows){
   let showGener = document.createElement('p')
   let showStatus = document.createElement('p')
   let showRuntime = document.createElement('p')
-let replaceComma = show.genres.toString().replace(/,/g, "|")
+  let replaceComma = show.genres.toString().replace(/,/g, "|")
   showRate.innerHTML = 'Rated: ' + show.rating.average
   showGener.innerHTML = 'Gener: ' + replaceComma
   showStatus.innerHTML = 'Status: ' + show.status
   showRuntime.innerHTML = 'Runtime: ' + show.runtime
- let sticker = document.createElement('div')
- sticker.id = 'showSticker'
- sticker.appendChild(title)
- sticker.appendChild(showImage)
+  let sticker = document.createElement('div')
+  sticker.id = 'showSticker'
+  sticker.appendChild(title)
+  sticker.appendChild(showImage)
  inShowProfile.appendChild(sticker)
   inShowProfile.appendChild(showSummary)
   showDiscription.appendChild(showRate)
@@ -91,7 +92,6 @@ let replaceComma = show.genres.toString().replace(/,/g, "|")
   filterShows()
 
 }
-
 
    ///////////////////function for live search filters the shows
    function filterShows(){
@@ -227,6 +227,3 @@ displayingNumOfEpisodes(episodeList, episodeList, 'EPISODE/S')
 
 
 window.onload = setup;
-
-
-
