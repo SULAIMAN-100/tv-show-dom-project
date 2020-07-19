@@ -83,8 +83,8 @@ option{
    flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  background-color: rgb(14, 71, 67);
-  border: 2px solid rgb(184, 184, 184);
+  background-color: rgb(30, 71, 69);
+
   box-shadow: 0 10px 10px rgb(28, 47, 48);
   
  }
@@ -160,6 +160,7 @@ img {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgb(23, 49, 47);
+ 
 }
 
 #show-picture{
@@ -169,7 +170,16 @@ img {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgb(23, 49, 47);
+  transition: 0.3s;
 }
+#show-picture:hover {
+  border: 5px solid rgb(255, 136, 0);
+  width: 16em;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(23, 49, 47);
+}
+
 
 #episode {
   max-width: 350px;
