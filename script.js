@@ -29,11 +29,19 @@ function selectionOfShows(orderedShowList){
   })
 }
 
+
+
+// let lessBtn = document.getElementsByClassName('lessBtn')
+// const showLess = ()=>{
+
+//   lessBtn.forEach(p=>p.innerText ='hi')
+// }
    //////////-------list of Shows profiles--------------->
 function listOfShowsProfiles(orderedShows){
   displayingNumOfEpisodes(orderedShows, orderedShows, 'SHOW/S')
 
  ///////////////////////////////////////////////////////////
+
  orderedShows.forEach(show=> {
   let showProfile = document.createElement('div')
   showProfile.id = 'show-profile'
@@ -50,7 +58,23 @@ function listOfShowsProfiles(orderedShows){
     showImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqEWgS0uxxEYJ0PsOb2OgwyWvC0Gjp8NUdPw&usqp=CAU'
   }
   let showSummary = document.createElement('p')
-  showSummary.innerHTML = show.summary
+  let lessBtn = document.createElement('button')
+  
+  showSummary.innerHTML = show.summary.substring(0, 150) + '...' 
+  showSummary.appendChild(lessBtn)
+  lessBtn.id = "lessBtn"
+  lessBtn.innerText ='show more'
+  lessBtn.addEventListener('click', ()=> {
+    if(  lessBtn.innerText ==='show more') {
+      showSummary.innerHTML = show.summary
+      showSummary.appendChild(lessBtn)
+      lessBtn.innerText ='show less'
+    } else if( lessBtn.innerText ==='show less') { 
+      showSummary.innerHTML = show.summary.substring(0, 150) + '...'
+      showSummary.appendChild(lessBtn) 
+      lessBtn.innerText ='show more'
+    }
+  })
   showImage.className = 'showImage'
   showImage.value = show.id
   let showDiscription = document.createElement('div')
